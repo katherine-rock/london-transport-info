@@ -3,7 +3,7 @@ import React from 'react'
 const App = () => {
   return (
     <div >
-          The basic empty template
+          London Traffic Report - Bringing you the latest updates on traffic disruptions across London. 
     </div>
   )
 }
