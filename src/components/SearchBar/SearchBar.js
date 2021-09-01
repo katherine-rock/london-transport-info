@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className="w-screen flex flex-col justify-center content-center place-items-center">
 
                 <button 
                     onClick={this.handleShowAll}
@@ -33,25 +33,26 @@ class SearchBar extends React.Component {
                     Show all traffic incidents
                 </button>
 
+                <h3 className="m-4">--- OR ---</h3>
+
                 <div className="m-4">
                     <h3>Search by road</h3>
-                    <input 
-                        placeholder="Road number"
+                    <input
+                        className="p-2 border-blue-700 focus:border-blue-400 hover:border-blue-500" 
+                        placeholder="Enter road number"
                         onChange={this.handleRoadChange} />
                 </div>
 
-                <div class="SearchBar-submit">
+                <div>
                     <button 
                         onClick={this.handleSearch} 
-                        className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Search
+                        className="mr-4 ml-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 focus:border-blue-400 rounded ">
+                        Search by road number
                     </button>
                 </div>
 
-                <div className="m-4">
-                    <p>Hints</p>
-                    <p>To search for disruptions on one road, enter the road number in the search bar. For example: A406</p>
-                    <p>To search for multiple roads at once, use a comma between each road number. For example: A406, A2</p>
+                <div className="m-4 md:max-w-md lg:max-w-md">
+                    <p>Tip: Enter a road number (like "A2") or multiple road numbers separated by a comma (like "A2, A406").</p>
                 </div>
 
             </div>

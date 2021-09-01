@@ -2,10 +2,10 @@ import header_icon from '../../images/header_icon.png';
 
 function Header() {
     return (
-        <div className="w-screen bg-blue-600 flex flex-col justify-center pl-4 pr-4">
+        <div className="w-screen bg-blue-600 flex flex-col justify-center pl-4 pr-4 md:pl-16 md:pr-16">
             <div className="flex flex-row items-center justify-center p-4">
                 <h1 
-                className="text-white  text-4xl sm:text-4xl md:text-5xl lg:text-7xl p-4">
+                className="text-white text-4xl sm:text-4xl md:text-5xl lg:text-7xl p-4">
                 London Traffic Report</h1>
 
                 <img 
@@ -15,7 +15,9 @@ function Header() {
             </div>
 
 
-            <h2 className="text-white text-xl flex flex-row justify-center pr-6 pb-6 w-screen text-2xl">All the latest traffic incidents around London to make your next journey a breeze!</h2>
+            <h2 className="text-white text-xl flex flex-row justify-center p-4 xw-screen sm:text-2xl md:text-3xl">
+                Avoid all the latest traffic incidents around London to make your next journey a breeze!
+            </h2>
         </div>
     )
 }
