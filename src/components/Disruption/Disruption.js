@@ -1,18 +1,8 @@
 import React from "react";
 
-const disruption = {
-    location: "London bridge",
-    severity: "major",
-    category: "accident",
-    subcategory: "bingle",
-    comments: "Comments about the accident",
-    currentUpdate: "Latest update on the incident",
-    currentUpdateDateTime: "9:00am on 01-Sep-2021",
-    status: "ongoing",
-};
-
 class Disruption extends React.Component {
   render() {
+    const { disruption } = this.props;
     return (
       <div>
         <h2>{disruption.location}</h2>

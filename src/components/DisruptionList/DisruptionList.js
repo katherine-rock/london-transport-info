@@ -5,12 +5,9 @@ class DisruptionList extends React.Component {
     render () {
         return (
             <div>
-                <Disruption />
-                <Disruption />
-                <Disruption />
-                <Disruption />
-                <Disruption />
-                <Disruption />
+                {this.props.disruptions.map((disruption) => {
+                    return <Disruption disruption={disruption} />;
+                })}
             </div>
         )
     }
