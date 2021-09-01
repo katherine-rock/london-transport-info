@@ -1,4 +1,14 @@
-### Test of API request using all in place of ID
+### Test of API request using all in place of ID - should return result
 GET https://api.tfl.gov.uk/Road/all/Disruption?app_id=API_engage_squared&app_key=9fa83c22a4a34be3b8b82b3f35de0828
+content-type: application/json
+cors: include
+
+### Test of API request using a valid, specific ID - should return result if there is a current incident for that road
+GET https://api.tfl.gov.uk/Road/a2/Disruption?app_id=API_engage_squared&app_key=9fa83c22a4a34be3b8b82b3f35de0828
+content-type: application/json
+cors: include
+
+### Test of API request using an invalid ID - should return error
+GET https://api.tfl.gov.uk/Road/b7/Disruption?app_id=API_engage_squared&app_key=9fa83c22a4a34be3b8b82b3f35de0828
 content-type: application/json
 cors: include

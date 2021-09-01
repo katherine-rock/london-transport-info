@@ -12,25 +12,26 @@ const TFL = {
             }
           })
           .then((response) => {
-              return response.json();
-          })
-          .then((jsonResponse) => {
-              if (jsonResponse) {
-                return jsonResponse.map((disruption) => {
-                    console.log(disruption);
-                    return {
-                        location: disruption.location,
-                        severity: disruption.severity,
-                        category: disruption.category,
-                        subcategory: disruption.subCategory,
-                        comments: disruption.comments,
-                        currentUpdate: disruption.currentUpdate,
-                        currentUpdateDateTime: disruption.currentUpdateDateTime,
-                        status: disruption.status,
-                    }
+            if (response.ok) {
+                return response.json()
+                .then((jsonResponse) => {
+                    return jsonResponse.map((disruption) => {
+                        console.log(disruption);
+                        return {
+                            location: disruption.location,
+                            severity: disruption.severity,
+                            category: disruption.category,
+                            subcategory: disruption.subCategory,
+                            comments: disruption.comments,
+                            currentUpdate: disruption.currentUpdate,
+                            currentUpdateDateTime: disruption.currentUpdateDateTime,
+                            status: disruption.status,
+                        }
+                    })
                 })
-              } 
+            }
           })
+          .catch(err => alert('Sorry. Something went wrong. Please try again.'))
     }
 }
 
