@@ -1,73 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using the basic template.
+# London Traffic Report #
 
-## What's in the basic template?
-- It includes node-sass, and a style.scss (and removes all .css files)
-- It doesn't use serviceWorker
-- It replaces the react favicon with a flower of life icon
+## Purpose ##
 
-## Available Scripts
+The purpose of London Traffic Report is to provide users living in or visiting London with an easy and fast way to identify and avoid traffic problems.
 
-In the project directory, you can run:
+The information used by this website has been sourced from the Transport for London Unified API. Please visit <https://api.tfl.gov.uk/> for more information.
 
-### `yarn start`
+### Instructions to install ###
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Double click on the zip file named "london-transport-info"
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2. Open a terminal window and navigate into the folder you just opened: "london-transport-info"
 
-### `yarn test`
+3. Type `yarn install` and press enter. This may take a few minutes.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Type `yarn start` and press enter. 
 
-### `yarn build`
+This should open automatically in your browser window. If it does not, please open your browser and type the following in for the address:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`http://localhost:3000/`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Instructions for use ###
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To see a list of all current traffic disruptions in London, click the button labelled 'Show all traffic indicents'.
 
-### `yarn eject`
+To see a list of traffic disruptions for a particular road, enter the road number in the search field and click 'Search by road number'.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To see a list of traffic disruptions for many roads, enter each road number in the search field, separated by a comma, and click 'Search by road number'.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tech Stack ###
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The app has been developed in React which uses JavaScript. JavaScript allows asynchronous code, which ensures the initial page is rendered while waiting to receive the traffic data from the API in response to the user's input.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Testing ###
 
-## Learn More
+Unit testing has been performed using Jest. Testing of the API requests has been performed using REST Client and visual inspection of React developer tools in Chrome.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the Jest tests, in a terminal window, type `yarn test`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run the Cypress tests, start the program by running the `yarn start` command in the terminal. In a second terminal window, run `yarn run cypress open`.
 
-### Code Splitting
+### Dependencies ###
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Refer to the package.json file for the complete list of dependencies.
 
-### Analyzing the Bundle Size
+### Design ###
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The header icon and favicon were purchased from <www.vectorstock.com> and have been used in accordance with their standard licensing agreement that permits use of their images for web publication.
+The website has been styled to account for differences in screen sizes across mobiles, tablets and desktops.
+Tailwind CSS has been used to style the components. Please visit <https://tailwindcss.com/> for more information.

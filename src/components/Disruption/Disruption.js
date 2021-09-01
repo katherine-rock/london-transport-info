@@ -1,5 +1,6 @@
 import React from "react";
 
+// Sets the values of the reported disruption with the data retrieved from the API
 class Disruption extends React.Component {
   render() {
     const { disruption } = this.props;

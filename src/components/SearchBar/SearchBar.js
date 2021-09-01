@@ -9,15 +9,18 @@ class SearchBar extends React.Component {
         this.handleShowAll = this.handleShowAll.bind(this);
     }
 
+    // Method to update the value entered in the search input field 
     handleRoadChange(event) {
         this.setState({ road: event.target.value })
     }
 
+    // Method to execute the search and pass in the current state of 'road' search term
     handleSearch(event) {
         this.props.searchTFL(this.state.road);
         event.preventDefault();
     }
 
+    // Method to execute the search with 'all' passed in as the search term
     handleShowAll(event) {
         this.props.searchTFL('all');
         event.preventDefault();

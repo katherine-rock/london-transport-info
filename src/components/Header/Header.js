@@ -1,5 +1,6 @@
 import header_icon from '../../images/header_icon.png';
 
+// Header in separate component for ease of updating later 
 function Header() {
     return (
         <div className="w-screen bg-blue-600 flex flex-col justify-center pl-4 pr-4 md:pl-16 md:pr-16">

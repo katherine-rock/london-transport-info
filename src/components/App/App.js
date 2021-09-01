@@ -12,6 +12,7 @@ class App extends React.Component {
     this.searchTFL = this.searchTFL.bind(this);
   }
 
+  // Calls the searchTFL API and then sets the state with all reported traffic disruptions 
   searchTFL(road) {
     TFL.searchTFL(road)
       .then((disruptions) => {

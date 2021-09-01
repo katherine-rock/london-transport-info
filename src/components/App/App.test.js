@@ -1,9 +1,25 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { unmountComponentAtNode } from "react-dom";
 import App from './App';
 
-test('renders basic empty template', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/basic empty template/i);
-  expect(linkElement).toBeInTheDocument();
+let container = null;
+beforeEach(() => {
+  // setup a DOM element as a render target
+  container = document.createElement("div");
+  document.body.appendChild(container);
 });
+
+afterEach(() => {
+  // cleanup on exiting
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+describe('App', () => {
+it('should show website name', () => {
+    render(<App/>);
+    const text = screen.getByText(/London Traffic Report/i);
+    expect(text).toBeInTheDocument();
+})});
