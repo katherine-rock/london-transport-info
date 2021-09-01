@@ -6,6 +6,7 @@ class SearchBar extends React.Component {
         this.state = { road: '' }
         this.handleRoadChange = this.handleRoadChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleShowAll = this.handleShowAll.bind(this);
     }
 
     handleRoadChange(event) {
@@ -17,24 +18,33 @@ class SearchBar extends React.Component {
         event.preventDefault();
     }
 
+    handleShowAll(event) {
+        this.props.searchTFL('all');
+        event.preventDefault();
+    }
+
     render () {
         return (
             <div class="SearchBar">
+
+                <button onClick={this.handleShowAll}>Show all traffic incidents</button>
+
                 <div class="SearchBar-fields">
+                    <h3>Search by road</h3>
                     <input 
-                        placeholder="Search by road name"
+                        placeholder="Road number"
                         onChange={this.handleRoadChange} />
                 </div>
 
-                <div>
-                    <p>To search for disruptions on one road, enter the road number in the search bar.</p>
-                    <p>To search for multiple roads at once, use a comma between each road number.</p>
-                    <p>For example: A406, A2</p>
+                <div class="SearchBar-submit">
+                    <button onClick={this.handleSearch} >Search</button>
                 </div>
 
-                <div class="SearchBar-submit">
-                    <button onClick={this.handleSearch} >Let's Go</button>
+                <div>
+                    <p>To search for disruptions on one road, enter the road number in the search bar. For example: A406</p>
+                    <p>To search for multiple roads at once, use a comma between each road number. For example: A406, A2</p>
                 </div>
+
             </div>
         )
     }
