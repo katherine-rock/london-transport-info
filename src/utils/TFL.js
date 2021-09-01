@@ -30,7 +30,7 @@ const TFL = {
                         status: disruption.status,
                     }
                 })
-              }
+              } 
           })
     }
 }

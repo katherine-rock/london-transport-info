@@ -3,21 +3,7 @@ import React from 'react'
 import DisruptionList from '../DisruptionList/DisruptionList';
 import SearchBar from '../SearchBar/SearchBar';
 import TFL from '../../utils/TFL'
-
-// const disruption = {
-//   location: "London bridge",
-//   severity: "major",
-//   category: "accident",
-//   subcategory: "bingle",
-//   comments: "Comments about the accident",
-//   currentUpdate: "Latest update on the incident",
-//   currentUpdateDateTime: "9:00am on 01-Sep-2021",
-//   status: "ongoing",
-// };
-
-// const disruptions = [
-//   disruption, disruption, disruption, disruption, disruption, disruption
-// ]
+import Header from '../Header/Header'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,7 +23,7 @@ class App extends React.Component {
   render () {
     return (
         <div class="App">
-          <h1>London Traffic Report</h1>
+          <Header />
           <SearchBar searchTFL={this.searchTFL} />
           <DisruptionList disruptions={this.state.disruptions} />
         </div>
