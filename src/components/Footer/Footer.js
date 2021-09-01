@@ -1,13 +1,14 @@
 function Footer() {
     return (
-        <div>
+        <div className="text-center p-4">
             <hr />
-            <p className="footer">
-                All information provided by this website has been sourced from the Transport for London Unified API.</p>
+            <p>All information provided by this website has been sourced from the Transport for London Unified API.</p>
 
             <span>Please visit </span>
-            <a href="https://api.tfl.gov.uk/" 
-            target="_blank">
+            <a 
+            href="https://api.tfl.gov.uk/" 
+            target="_blank"
+            className="underline">
             https://api.tfl.gov.uk/</a>
             <span> for more information</span>
 
