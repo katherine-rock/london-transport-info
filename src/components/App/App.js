@@ -19,11 +19,15 @@ const disruptions = [
 ]
 
 class App extends React.Component {
+  searchTFL(road) {
+    console.log(`Searching Transport For London with road term ${road}`)
+  }
+
   render () {
     return (
         <div class="App">
           <h1>London Traffic Report</h1>
-          <SearchBar />
+          <SearchBar searchTFL={this.searchTFL} />
           <DisruptionList disruptions={disruptions} />
         </div>
     )

@@ -1,11 +1,29 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { road: '' }
+        this.handleRoadChange = this.handleRoadChange.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    handleRoadChange(event) {
+        this.setState({ road: event.target.value })
+    }
+
+    handleSearch(event) {
+        this.props.searchTFL(this.state.road);
+        event.preventDefault();
+    }
+
     render () {
         return (
             <div class="SearchBar">
                 <div class="SearchBar-fields">
-                    <input placeholder="Search by road name" />
+                    <input 
+                        placeholder="Search by road name"
+                        onChange={this.handleRoadChange} />
                 </div>
 
                 <div>
@@ -15,7 +33,7 @@ class SearchBar extends React.Component {
                 </div>
 
                 <div class="SearchBar-submit">
-                    <button>Let's Go</button>
+                    <button onClick={this.handleSearch} >Let's Go</button>
                 </div>
             </div>
         )
