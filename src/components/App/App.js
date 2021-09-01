@@ -1,9 +1,9 @@
 import React from 'react'
-// import Disruption from '../Disruption/Disruption';
 import DisruptionList from '../DisruptionList/DisruptionList';
 import SearchBar from '../SearchBar/SearchBar';
-import TFL from '../../utils/TFL'
-import Header from '../Header/Header'
+import TFL from '../../utils/TFL';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class App extends React.Component {
   }
 
   searchTFL(road) {
-    // console.log(`Searching Transport For London with road term ${road}`)
     TFL.searchTFL(road)
       .then((disruptions) => {
         this.setState({disruptions: disruptions})
@@ -26,6 +25,7 @@ class App extends React.Component {
           <Header />
           <SearchBar searchTFL={this.searchTFL} />
           <DisruptionList disruptions={this.state.disruptions} />
+          <Footer />
         </div>
     )
   }
