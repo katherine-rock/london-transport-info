@@ -3,6 +3,7 @@ import React from "react";
 class Disruption extends React.Component {
   render() {
     const { disruption } = this.props;
+    
     return (
       <div>
         <h2>{disruption.location}</h2>
