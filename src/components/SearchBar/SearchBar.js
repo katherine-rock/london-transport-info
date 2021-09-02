@@ -30,7 +30,8 @@ class SearchBar extends React.Component {
         return (
             <div className="w-screen flex flex-col justify-center content-center place-items-center">
 
-                <button 
+                <button
+                    data-cy="show-all-button"  
                     onClick={this.handleShowAll}
                     className="m-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                     Show all traffic incidents
@@ -41,6 +42,7 @@ class SearchBar extends React.Component {
                 <div className="m-4">
                     <h3>Search by road</h3>
                     <input
+                        id="roadsearch"
                         className="p-2 border-blue-700 focus:border-blue-400 hover:border-blue-500" 
                         placeholder="Enter road number"
                         onChange={this.handleRoadChange} />
@@ -48,6 +50,7 @@ class SearchBar extends React.Component {
 
                 <div>
                     <button 
+                        data-cy="search-road-button"  
                         onClick={this.handleSearch} 
                         className="mr-4 ml-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 focus:border-blue-400 rounded ">
                         Search by road number
