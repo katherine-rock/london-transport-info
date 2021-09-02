@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { disruptions: []};
+    this.state = { disruptions: [] };
     this.searchTFL = this.searchTFL.bind(this);
   }
 
@@ -16,7 +16,7 @@ class App extends React.Component {
   searchTFL(road) {
     TFL.searchTFL(road)
       .then((disruptions) => {
-        this.setState({disruptions: disruptions})
+        this.setState({ disruptions: disruptions })
       })
   }
 

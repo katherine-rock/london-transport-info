@@ -27,7 +27,8 @@ class Disruption extends React.Component {
             {disruption.comments}
           </p>
 
-          <p>
+          {/* Includes conditional formatting to highlight severity of incident */}
+          <p style={{backgroundColor: disruption.severity === 'Severe' ? 'orange' : 'white'}}>
             <span className="font-bold">Severity: </span>
             {disruption.severity}
           </p>
